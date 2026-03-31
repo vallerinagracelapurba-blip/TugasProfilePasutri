@@ -1,22 +1,52 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Erin from "./pages/Erin.jsx";    // E besar sesuai foto
-import Cantika from "./pages/cika.jsx"; // Alamatnya cika.jsx sesuai foto
-import Damar from "./pages/damar.jsx";  // d kecil sesuai foto
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Erin from "./pages/Erin.jsx";
+import Cantika from "./pages/cika.jsx";
+import Damar from "./pages/damar.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-          <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 text-center">
-            <h1 className="text-3xl font-bold mb-6">Tugas Profile Pasutri</h1>
-            <div className="flex gap-4">
-              <a href="/erin" className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Erin</a>
-              <a href="/cantika" className="px-6 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition">Cantika</a>
-              <a href="/damar" className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">Damar</a>
+          <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-black flex flex-col items-center justify-center p-6 font-sans">
+            
+            <div className="max-w-4xl w-full bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-10 md:p-16 text-center shadow-2xl">
+              
+              <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 mb-6 tracking-tight drop-shadow-sm">
+                Portofolio Tim Pasutri
+              </h1>
+              <p className="text-slate-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
+                Selamat datang di portal portofolio kami. Silakan pilih anggota tim di bawah ini untuk melihat profil profesional masing-masing.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <Link to="/erin" className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 p-[2px] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_40px_-10px_rgba(99,102,241,0.8)] cursor-pointer">
+                  <div className="flex h-full w-full items-center justify-center rounded-xl bg-slate-900/60 px-6 py-8 transition-all duration-300 group-hover:bg-transparent">
+                    <span className="text-2xl font-bold text-white tracking-wider">Erin</span>
+                  </div>
+                </Link>
+
+                <Link to="/cantika" className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-rose-400 to-pink-600 p-[2px] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_40px_-10px_rgba(244,63,94,0.8)] cursor-pointer">
+                  <div className="flex h-full w-full items-center justify-center rounded-xl bg-slate-900/60 px-6 py-8 transition-all duration-300 group-hover:bg-transparent">
+                    <span className="text-2xl font-bold text-white tracking-wider">Cantika</span>
+                  </div>
+                </Link>
+
+                <Link to="/damar" className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 p-[2px] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_40px_-10px_rgba(16,185,129,0.8)] cursor-pointer">
+                  <div className="flex h-full w-full items-center justify-center rounded-xl bg-slate-900/60 px-6 py-8 transition-all duration-300 group-hover:bg-transparent">
+                    <span className="text-2xl font-bold text-white tracking-wider">Damar</span>
+                  </div>
+                </Link>
+              </div>
+
+            </div>
+            
+            <div className="mt-12 text-slate-500 text-sm font-medium tracking-wide">
+              Tugas Project Implementation • Universitas Brawijaya
             </div>
           </div>
         } />
+        
         <Route path="/erin" element={<Erin />} />
         <Route path="/cantika" element={<Cantika />} />
         <Route path="/damar" element={<Damar />} />
