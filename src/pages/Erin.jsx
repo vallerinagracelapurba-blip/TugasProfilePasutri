@@ -1,4 +1,5 @@
 import React from 'react';
+import fotoErin from '../assets/images/fotoprofil-erin.jpeg';
 
 const Erin = () => {
   return (
@@ -10,7 +11,7 @@ const Erin = () => {
           {/* Ganti src gambar di bawah ini dengan foto asli kamu yang ditaruh di folder public atau src */}
           <div className="w-40 h-40 bg-gray-300 rounded-full border-4 border-white shadow-lg mb-6 overflow-hidden">
             <img 
-              src="https://via.placeholder.com/150" 
+              src={fotoErin}
               alt="Foto Profil Vallerina" 
               className="w-full h-full object-cover"
             />
